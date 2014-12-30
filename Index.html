@@ -1,0 +1,217 @@
+﻿<script src="js/jquery.js"></script>
+<script src="js/angular.js"></script>
+
+<script src="js/linq.js"></script>
+
+<script src="js/angular-route.js"></script>
+<script src="table-app.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/ui.bootstrap.js"></script>
+
+<script src="directives/table-template.js"></script>
+<script src="directives/data-table-func.js"></script>
+<script src="controllers/table-controller.js"></script>
+<script src="directives/data-table-directive.js"></script>
+
+<link href="css/table/data-table.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="css/highlight.min.css" rel="stylesheet" />
+
+<div style="padding: 20px;" ng-app="table-app" ng-controller="table-controller">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Table Example</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Basic
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <aio-data-table data="browsers" enable-paging="true" 
+                            enable-search="true" mapping="mapping"></aio-data-table>
+
+                        <tabset>    
+    <tab>
+      <tab-heading>
+        Markup
+      </tab-heading>
+     <pre><code class="html">
+&lt;aio-data-table data=&quot;browsers&quot; 
+    enable-paging=&quot;true&quot; 
+    enable-search=&quot;true&quot;
+    mapping=&quot;
+         {
+            headers:['Rendering engine', 'Browser', 'Paltform(s)', 'Engine Version', 'Css Grade'],            
+            map = ['$.engine', '$.browserinfo', '$.platform', '$.version', '$.css']
+         }&quot;&gt;
+&lt;/aio-data-table&gt;
+     </code></pre>
+    </tab>
+       <tab>
+      <tab-heading>
+         Javascript
+      </tab-heading>
+           <pre>
+      <code>
+function tableController($scope) {
+    
+    $scope.mapping = {};
+    $scope.mapping.headers = ['Rendering engine', 'Browser', 'Paltform(s)', 'Engine Version', 'Css Grade'];
+    $scope.mapping.map = ['$.engine', '$.browserinfo', '$.platform', '$.version', '$.css'];
+
+    $scope.browserInfo = {
+        engine: 'Gecko',
+        browserinfo: 'Firefox 1.0',
+        platform: 'Win 98+ / OSX.2+',
+        version: '1.7',
+        css: 'A',
+        id: 0
+    }
+    $scope.browsers = [];
+    for (var index = 0; index <= 10; index++) {
+        var browser = angular.copy($scope.browserInfo);
+        browser.version = Math.random(100);
+        browser.id = (index + 1);
+        $scope.browsers.push(browser);
+    }
+}
+      </code>
+               </pre>
+    </tab>
+       <tab>
+      <tab-heading>
+       Sample Data
+      </tab-heading>
+      <pre>
+          <code>
+$scope.mapping = {};
+$scope.mapping.headers = ['Rendering engine', 'Browser', 'Paltform(s)', 'Engine Version', 'Css Grade'];
+$scope.mapping.map = ['$.engine', '$.browserinfo', '$.platform', '$.version', '$.css'];
+
+$scope.browserInfo = {
+    engine: 'Gecko',
+    browserinfo: 'Firefox 1.0',
+    platform: 'Win 98+ / OSX.2+',
+    version: '1.7',
+    css: 'A',
+    id: 0
+}
+$scope.browsers = [];
+for (var index = 0; index <= 10; index++) {
+    var browser = angular.copy($scope.browserInfo);
+    browser.version = Math.random(100);
+    browser.id = (index + 1);
+    $scope.browsers.push(browser);
+}
+          </code>
+      </pre>
+    </tab>
+  </tabset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Round Corners
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <aio-data-table-round-corners data="browsers" enable-paging="true" enable-search="true" mapping="mapping"></aio-data-table-round-corners>
+
+                        <tabset>    
+    <tab>
+      <tab-heading>
+        Markup
+      </tab-heading>
+     <pre><code class="html">
+&lt;aio-data-table-round-corners data=&quot;browsers&quot; 
+    enable-paging=&quot;true&quot; 
+    enable-search=&quot;true&quot;
+    mapping=&quot;
+         {
+            headers:['Rendering engine', 'Browser', 'Paltform(s)', 'Engine Version', 'Css Grade'],            
+            map = ['$.engine', '$.browserinfo', '$.platform', '$.version', '$.css']
+         }&quot;&gt;
+&lt;/aio-data-table-round-corners&gt;
+     </code></pre>
+    </tab>
+       <tab>
+      <tab-heading>
+         Javascript
+      </tab-heading>
+           <pre>
+      <code>
+function tableController($scope) {
+    
+    $scope.mapping = {};
+    $scope.mapping.headers = ['Rendering engine', 'Browser', 'Paltform(s)', 'Engine Version', 'Css Grade'];
+    $scope.mapping.map = ['$.engine', '$.browserinfo', '$.platform', '$.version', '$.css'];
+
+    $scope.browserInfo = {
+        engine: 'Gecko',
+        browserinfo: 'Firefox 1.0',
+        platform: 'Win 98+ / OSX.2+',
+        version: '1.7',
+        css: 'A',
+        id: 0
+    }
+    $scope.browsers = [];
+    for (var index = 0; index <= 10; index++) {
+        var browser = angular.copy($scope.browserInfo);
+        browser.version = Math.random(100);
+        browser.id = (index + 1);
+        $scope.browsers.push(browser);
+    }
+}
+      </code>
+               </pre>
+    </tab>
+       <tab>
+      <tab-heading>
+       Sample Data
+      </tab-heading>
+      <pre>
+          <code>
+$scope.mapping = {};
+$scope.mapping.headers = ['Rendering engine', 'Browser', 'Paltform(s)', 'Engine Version', 'Css Grade'];
+$scope.mapping.map = ['$.engine', '$.browserinfo', '$.platform', '$.version', '$.css'];
+
+$scope.browserInfo = {
+    engine: 'Gecko',
+    browserinfo: 'Firefox 1.0',
+    platform: 'Win 98+ / OSX.2+',
+    version: '1.7',
+    css: 'A',
+    id: 0
+}
+$scope.browsers = [];
+for (var index = 0; index <= 10; index++) {
+    var browser = angular.copy($scope.browserInfo);
+    browser.version = Math.random(100);
+    browser.id = (index + 1);
+    $scope.browsers.push(browser);
+}
+          </code>
+      </pre>
+    </tab>
+  </tabset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+    </div>
+</div>
