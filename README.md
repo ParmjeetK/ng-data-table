@@ -37,7 +37,7 @@ browsers = [{
         platform: 'Win 98+ / OSX.2+',
         version: '1.7',
         css: 'A',
-        id: 0
+        id: 1
     },
     {
         engine: 'Cool',
@@ -45,7 +45,7 @@ browsers = [{
         platform: 'Win 98+ / OSX.2+',
         version: '1.7',
         css: 'A',
-        id: 0
+        id: 2
     }
 ]
 ```
