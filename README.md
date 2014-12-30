@@ -28,3 +28,24 @@ mapping="{
          }">
 </aio-data-table-round-corners>
 ```
+
+Sample Data
+```javascript
+browsers = [{
+        engine: 'Awesome',
+        browserinfo: 'Firefox 1.0',
+        platform: 'Win 98+ / OSX.2+',
+        version: '1.7',
+        css: 'A',
+        id: 0
+    },
+    {
+        engine: 'Cool',
+        browserinfo: 'Chrome',
+        platform: 'Win 98+ / OSX.2+',
+        version: '1.7',
+        css: 'A',
+        id: 0
+    }
+]
+```
